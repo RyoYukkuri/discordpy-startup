@@ -19,7 +19,7 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    if message.content.startswith('/trans'):
+    if message.content.startswith('!trans'):
         say = message.content
         say = say[7:]
         if say.find('-') == -1:

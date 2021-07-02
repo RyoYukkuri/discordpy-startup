@@ -5,8 +5,19 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
+@bot.command()
+async def neko(ctx):
+    await ctx.send('にゃーん')
+
+
+bot.run(token)
+
+
+
 import discord
 from googletrans import Translator
+
+TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
 client = discord.Client()
 translator = Translator()
@@ -59,4 +70,4 @@ async def on_message(message):
         m = 'この文字列の言語はたぶん ' + detect.lang + ' です。'
         await message.channel.send(m)
 
-client.run(token)
+client.run(TOKEN)
